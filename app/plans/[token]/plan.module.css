@@ -9,3 +9,8 @@
 .connection { color: #ae402a; font-weight: 600; line-height: 1.5; }
 .reply { margin-top: 32px; color: #6d6960; }
 .eyebrow { letter-spacing: .12em; font-size: 13px; }
+.actions { display: grid; gap: 12px; margin-top: 28px; }
+.actions a { display: grid; place-items: center; min-height: 48px; padding: 10px 18px; border-radius: 16px; text-decoration: none; font-weight: 600; text-align: center; }
+.open { background: #c34228; color: #fffaf3; }
+.download { background: #f4d3c5; color: #7c2f1f; }
+.actions a:focus-visible { outline: 3px solid #201f19; outline-offset: 4px; }

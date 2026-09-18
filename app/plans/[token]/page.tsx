@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { fetchPlacePlan } from "@/lib/plans";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, primaryDownloadLabel, primaryDownloadURL } from "@/lib/site";
 import styles from "./plan.module.css";
 
 type Props = { params: Promise<{ token: string }> };
@@ -45,7 +45,11 @@ export default async function PlanPage({ params }: Props) {
       <Image src={plan.imageURL} alt={`${plan.place_name} · ${plan.location}`} width={780} height={590} unoptimized className={styles.card} />
       <p className={styles.message}>{plan.message}</p>
       <p className={styles.connection}>{plan.connection}</p>
-      <p className={styles.reply}>Make it happen in your chat</p>
+      <div className={styles.actions}>
+        <a className={styles.open} href={`recme://plans/${token}`}>Open invitation in ASTIR</a>
+        <a className={styles.download} href={primaryDownloadURL}>{primaryDownloadLabel}</a>
+      </div>
+      <p className={styles.reply}>Already have the app? Open this invitation above<br />Otherwise, get the app and come back to this link</p>
     </main>
   );
 }

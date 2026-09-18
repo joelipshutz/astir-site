@@ -23,6 +23,10 @@
             "comment": "Opens a revocable rec.me list invitation."
           },
           {
+            "/": "/plans/*",
+            "comment": "Opens a read-only ASTIR place invitation."
+          },
+          {
             "/": "/share/tiktok",
             "comment": "Returns TikTok Share Kit results to rec.me."
           }
