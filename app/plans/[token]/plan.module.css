@@ -1,0 +1,11 @@
+.plan { max-width: 500px; margin: 36px auto 72px; padding: 0 22px; color: #201f19; }
+.plan h1 { font-family: Georgia, serif; font-size: clamp(30px, 7vw, 40px); font-weight: 500; line-height: 1.12; margin: 22px 0 10px; }
+.sender { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 600; }
+.avatar, .initial { border-radius: 50%; width: 48px; height: 48px; object-fit: cover; }
+.initial { display: grid; place-items: center; background: #f4d3c5; }
+.date { margin: 0 0 24px; color: #6d6960; }
+.card { display: block; width: 100%; height: auto; border-radius: 20px; }
+.message { font-size: 23px; line-height: 1.4; white-space: pre-wrap; margin: 28px 0 16px; overflow-wrap: anywhere; }
+.connection { color: #ae402a; font-weight: 600; line-height: 1.5; }
+.reply { margin-top: 32px; color: #6d6960; }
+.eyebrow { letter-spacing: .12em; font-size: 13px; }
