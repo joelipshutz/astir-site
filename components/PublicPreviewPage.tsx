@@ -17,6 +17,11 @@ const fallbackCopy: Record<
   SharedRouteKind,
   { eyebrow: string; title: string; description: string }
 > = {
+  activity: {
+    eyebrow: "Shared activity",
+    title: "A place, through someone you trust.",
+    description: "Open ASTIR to view this Check-in or Wanna Go. Access follows the owner’s privacy settings."
+  },
   profile: {
     eyebrow: "Shared profile",
     title: "Someone wants you to see their map.",
@@ -53,6 +58,22 @@ export function PublicPreviewPage({
   const title = preview?.title || fallback.title;
   const description = preview?.description || fallback.description;
   const openURL = appSchemeURL(kind, identifier);
+
+  if (preview?.card_image_url) return (
+    <main className="share-shell">
+      <section className="share-preview share-preview--card">
+        <a href={openURL} aria-label={title}>
+          {/* The approved SwiftUI card itself is the link, including its action. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={preview.card_image_url} alt={title} width={1170} height={978}
+            className="share-card-image" referrerPolicy="no-referrer" />
+        </a>
+        <div className="share-preview__actions">
+          <a className="button button--secondary" href={primaryDownloadURL}>{primaryDownloadLabel}</a>
+        </div>
+      </section>
+    </main>
+  );
 
   return (
     <main className="share-shell">
@@ -99,7 +120,7 @@ export function PublicPreviewPage({
           ) : null}
           <div className="share-preview__actions">
             <a className="button" href={openURL}>
-              Open in rec.me
+              {kind === "invite" ? "Join" : "View in ASTIR"}
             </a>
             <a className="button button--secondary" href={primaryDownloadURL}>
               {primaryDownloadLabel}
