@@ -29,6 +29,10 @@
           {
             "/": "/share/tiktok",
             "comment": "Returns TikTok Share Kit results to rec.me."
+          },
+          {
+            "/": "/activities/*",
+            "comment": "Opens the exact shared ASTIR Check-in or Wanna Go."
           }
         ]
       }

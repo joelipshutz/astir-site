@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { websiteURL, type SharedRouteKind } from "@/lib/site";
 
 export type PublicPreview = {
-  kind: "profile" | "place" | "list" | "invite";
+  kind: "profile" | "place" | "list" | "invite" | "activity";
   title: string;
   subtitle?: string;
   description?: string;
@@ -13,7 +13,7 @@ export type PublicPreview = {
   is_available: boolean;
 };
 
-const allowedKinds = new Set(["profile", "place", "list", "invite"]);
+const allowedKinds = new Set(["profile", "place", "list", "invite", "activity"]);
 
 export const fetchPublicPreview = cache(async function fetchPublicPreview(
   kind: PublicPreview["kind"],

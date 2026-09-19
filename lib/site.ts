@@ -15,14 +15,18 @@ export const primaryDownloadLabel =
     ? "Download on the App Store"
     : "Join the TestFlight";
 
-export type SharedRouteKind = "profile" | "place" | "list" | "invite";
+export type SharedRouteKind = "profile" | "place" | "list" | "invite" | "activity";
 
 export function appSchemeURL(kind: SharedRouteKind, identifier: string): string {
-  const root = kind === "invite" ? "invites" : `${kind}s`;
+  const root = kind === "invite" ? "invites" : kind === "activity" ? "activities" : `${kind}s`;
   return `recme://${root}/${encodeURIComponent(identifier)}`;
 }
 
 export function websiteURL(kind: SharedRouteKind, identifier: string): string {
-  const root = kind === "invite" ? "invites" : `${kind}s`;
+  const root = kind === "invite" ? "invites" : kind === "activity" ? "activities" : `${kind}s`;
   return `${SITE_URL}/${root}/${encodeURIComponent(identifier)}`;
+}
+
+export function validActivityID(identifier: string): boolean {
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(identifier);
 }

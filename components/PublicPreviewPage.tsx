@@ -17,6 +17,11 @@ const fallbackCopy: Record<
   SharedRouteKind,
   { eyebrow: string; title: string; description: string }
 > = {
+  activity: {
+    eyebrow: "Shared activity",
+    title: "A place, through someone you trust.",
+    description: "Open ASTIR to view this Check-in or Wanna Go. Access follows the owner’s privacy settings."
+  },
   profile: {
     eyebrow: "Shared profile",
     title: "Someone wants you to see their map.",
@@ -99,7 +104,7 @@ export function PublicPreviewPage({
           ) : null}
           <div className="share-preview__actions">
             <a className="button" href={openURL}>
-              Open in rec.me
+              {kind === "invite" ? "Join" : "View in ASTIR"}
             </a>
             <a className="button button--secondary" href={primaryDownloadURL}>
               {primaryDownloadLabel}
