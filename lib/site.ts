@@ -30,3 +30,8 @@ export function websiteURL(kind: SharedRouteKind, identifier: string): string {
 export function validActivityID(identifier: string): boolean {
   return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(identifier);
 }
+
+export function publicProfileShareTitle(displayName: string): string {
+  const firstName = displayName.trim().split(/\s+/)[0];
+  return firstName ? `Discover ${firstName}’s world` : "Discover their world";
+}

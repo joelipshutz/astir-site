@@ -1,6 +1,6 @@
 import { cache } from "react";
 import type { Metadata } from "next";
-import { websiteURL, type SharedRouteKind } from "@/lib/site";
+import { publicProfileShareTitle, websiteURL, type SharedRouteKind } from "@/lib/site";
 
 export type PublicPreview = {
   kind: "profile" | "place" | "list" | "invite" | "activity";
@@ -56,7 +56,10 @@ export const fetchPublicPreview = cache(async function fetchPublicPreview(
     }
 
     const payload = (await response.json()) as PublicPreview | null;
-    return payload?.is_available ? payload : null;
+    if (!payload?.is_available) return null;
+    return kind === "profile"
+      ? { ...payload, title: publicProfileShareTitle(payload.title), subtitle: undefined }
+      : payload;
   } catch {
     return null;
   }
