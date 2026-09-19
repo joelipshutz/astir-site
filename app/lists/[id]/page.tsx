@@ -4,13 +4,14 @@ import { fetchPublicPreview, publicPreviewMetadata } from "@/lib/previews";
 
 type PageProps = {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ card?: string | string[] }>;
 };
 
 export async function generateMetadata({
-  params
+  params, searchParams
 }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const preview = await fetchPublicPreview("list", id);
+  const preview = await fetchPublicPreview("list", id, (await searchParams).card);
   return publicPreviewMetadata({
     kind: "list",
     identifier: id,
@@ -22,8 +23,8 @@ export async function generateMetadata({
   });
 }
 
-export default async function ListSharePage({ params }: PageProps) {
+export default async function ListSharePage({ params, searchParams }: PageProps) {
   const { id } = await params;
-  const preview = await fetchPublicPreview("list", id);
+  const preview = await fetchPublicPreview("list", id, (await searchParams).card);
   return <PublicPreviewPage kind="list" identifier={id} preview={preview} />;
 }

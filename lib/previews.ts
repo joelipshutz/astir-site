@@ -1,3 +1,4 @@
+import { readShareCard, validShareCardToken } from "./share-card-contract";
 import { cache } from "react";
 import type { Metadata } from "next";
 import { publicProfileShareTitle, websiteURL, type SharedRouteKind } from "@/lib/site";
@@ -9,6 +10,8 @@ export type PublicPreview = {
   description?: string;
   eyebrow?: string;
   image_url?: string;
+  card_image_url?: string;
+  card_token?: string;
   item_count?: number;
   is_available: boolean;
 };
@@ -17,7 +20,8 @@ const allowedKinds = new Set(["profile", "place", "list", "invite", "activity"])
 
 export const fetchPublicPreview = cache(async function fetchPublicPreview(
   kind: PublicPreview["kind"],
-  identifier: string
+  identifier: string,
+  cardToken?: string | string[]
 ): Promise<PublicPreview | null> {
   if (
     !allowedKinds.has(kind) ||
@@ -31,6 +35,21 @@ export const fetchPublicPreview = cache(async function fetchPublicPreview(
   const publishableKey = process.env.SUPABASE_PUBLISHABLE_KEY;
   if (!endpoint || !publishableKey) {
     return null;
+  }
+
+  if (cardToken !== undefined) {
+    if (!validShareCardToken(cardToken)) return null;
+    try {
+      const response = await fetch(`${endpoint}/rest/v1/rpc/share_card_preview`, {
+        method: "POST",
+        headers: { apikey: publishableKey, Authorization: `Bearer ${publishableKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ input_token: cardToken, input_kind: kind, input_identifier: identifier }),
+        cache: "no-store"
+      });
+      if (!response.ok) return null;
+      const card = readShareCard(await response.json(), endpoint);
+      return card ? { kind, title: card.title, card_image_url: card.imageURL, card_token: cardToken, is_available: true } : null;
+    } catch { return null; }
   }
 
   try {
@@ -82,27 +101,34 @@ export function publicPreviewMetadata({
 }): Metadata {
   const title = preview?.title || fallbackTitle;
   const description = preview?.description || fallbackDescription;
-  const url = websiteURL(kind, identifier);
+  const canonicalURL = websiteURL(kind, identifier);
+  const url = preview?.card_token
+    ? canonicalURL.replace("https://getrec.me/", "https://getrec.me/cards/") + `?card=${preview.card_token}`
+    : canonicalURL;
+  const images = preview?.card_image_url
+    ? [{ url: preview.card_image_url, width: 1170, height: 978, alt: title }]
+    : ["/og.png"];
 
   return {
-    title,
+    title: { absolute: title },
     description,
+    referrer: "no-referrer",
     alternates: { canonical: url },
     openGraph: {
       title,
       description,
       url,
-      siteName: "rec.me",
+      siteName: "ASTIR",
       type: "website",
-      images: ["/og.png"]
+      images
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/og.png"]
+      images
     },
     robots:
-      alwaysNoIndex || !preview ? { index: false, follow: false } : undefined
+      alwaysNoIndex || !!preview?.card_token || !preview ? { index: false, follow: false } : undefined
   };
 }

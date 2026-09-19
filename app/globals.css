@@ -4383,3 +4383,7 @@ img {
     animation: none !important;
   }
 }
+
+/* A shared snapshot is one tappable card with its native artwork intact. */
+.share-preview--card { display: flex; flex-direction: column; max-width: 520px; padding: 20px; gap: 20px; }
+.share-card-image { display: block; width: 100%; height: auto; border-radius: 20px; }

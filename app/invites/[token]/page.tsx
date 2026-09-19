@@ -4,13 +4,14 @@ import { fetchPublicPreview, publicPreviewMetadata } from "@/lib/previews";
 
 type PageProps = {
   params: Promise<{ token: string }>;
+  searchParams: Promise<{ card?: string | string[] }>;
 };
 
 export async function generateMetadata({
-  params
+  params, searchParams
 }: PageProps): Promise<Metadata> {
   const { token } = await params;
-  const preview = await fetchPublicPreview("invite", token);
+  const preview = await fetchPublicPreview("invite", token, (await searchParams).card);
   return publicPreviewMetadata({
     kind: "invite",
     identifier: token,
@@ -22,9 +23,9 @@ export async function generateMetadata({
   });
 }
 
-export default async function InviteSharePage({ params }: PageProps) {
+export default async function InviteSharePage({ params, searchParams }: PageProps) {
   const { token } = await params;
-  const preview = await fetchPublicPreview("invite", token);
+  const preview = await fetchPublicPreview("invite", token, (await searchParams).card);
   return (
     <PublicPreviewPage kind="invite" identifier={token} preview={preview} />
   );

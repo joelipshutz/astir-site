@@ -59,6 +59,22 @@ export function PublicPreviewPage({
   const description = preview?.description || fallback.description;
   const openURL = appSchemeURL(kind, identifier);
 
+  if (preview?.card_image_url) return (
+    <main className="share-shell">
+      <section className="share-preview share-preview--card">
+        <a href={openURL} aria-label={title}>
+          {/* The approved SwiftUI card itself is the link, including its action. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={preview.card_image_url} alt={title} width={1170} height={978}
+            className="share-card-image" referrerPolicy="no-referrer" />
+        </a>
+        <div className="share-preview__actions">
+          <a className="button button--secondary" href={primaryDownloadURL}>{primaryDownloadLabel}</a>
+        </div>
+      </section>
+    </main>
+  );
+
   return (
     <main className="share-shell">
       <section className="share-preview">
