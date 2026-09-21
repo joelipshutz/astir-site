@@ -7,6 +7,26 @@
         ],
         "components": [
           {
+            "/": "/cards/profiles/*",
+            "comment": "Opens a published profile card in compatible Astir apps."
+          },
+          {
+            "/": "/cards/places/*",
+            "comment": "Opens a published place card in compatible Astir apps."
+          },
+          {
+            "/": "/cards/lists/*",
+            "comment": "Opens a published list card in compatible Astir apps."
+          },
+          {
+            "/": "/cards/activities/*",
+            "comment": "Opens the exact Check-in or Wanna Go from a published card."
+          },
+          {
+            "/": "/cards/invites/*",
+            "comment": "Opens a published list invitation using existing access checks."
+          },
+          {
             "/": "/profiles/*",
             "comment": "Opens a shared rec.me profile."
           },
