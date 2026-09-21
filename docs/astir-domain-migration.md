@@ -14,8 +14,10 @@ form the palette. The darker Signal companion `#B23620` supports small text
 and white-on-color buttons. Editorial serif headings pair with Avenir Next
 body text and condensed labels, with local system fallbacks.
 
-Existing real app walkthrough images are retained and labeled as being from
-the former rec.me version. Do not present these as current Astir screenshots.
+The website now uses current Astir component previews and illustrative
+walkthroughs (REC-595). Example content and approved native UI mockups are
+labeled as previews, not represented as screenshots of the full application.
+See `DESIGN.md` for the website's psychedelic print and editorial UI treatment.
 
 ## Cutover sequence
 

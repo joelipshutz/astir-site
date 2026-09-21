@@ -70,7 +70,7 @@ export default function HowItWorksPage() {
               fill
               priority
               sizes="(max-width: 900px) 340px, 380px"
-              src="/product/recme-map-social.jpg"
+              src="/product/astir/map-light.webp"
             />
           </div>
           <div className="motion-hero__ticket motion-card-to-map">
@@ -97,7 +97,7 @@ export default function HowItWorksPage() {
         <header className="motion-story__header motion-reveal">
           <p className="eyebrow">One place, still useful later</p>
           <h2>Follow the memory from map pin to future plan.</h2>
-          <p className="motion-story__proof">These real app walkthroughs were captured before the Astir rebrand. You’ll see the former rec.me name in some screens.</p>
+          <p className="motion-story__proof">Explore illustrative walkthroughs of the Astir interface. Pause or step through each example at your own pace.</p>
         </header>
 
         <div className="motion-story__route" aria-hidden="true">

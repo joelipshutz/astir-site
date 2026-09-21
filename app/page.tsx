@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { InteractiveProductDemo } from "@/components/InteractiveProductDemo";
+import { DemoPhoto } from "@/components/AstirDemoUI";
 import { primaryDownloadLabel, primaryDownloadURL } from "@/lib/site";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
@@ -66,11 +67,9 @@ const memoryMoments = [
 export default function HomePage() {
   return (
     <main>
-      <section className="hero">
+      <section className="hero psychedelic-hero">
+        <Image className="psychedelic-hero__art" src="/art/astir-contours.webp" alt="" fill priority sizes="100vw" />
         <div className="hero__copy">
-          <div className="hero__identity">
-            <Image src="/brand/astir-wordmark.png" alt="Astir — Oneness" width={1600} height={764} priority sizes="(max-width: 620px) 90vw, 480px" />
-          </div>
           <p className="eyebrow">Your world, remembered together</p>
           <h1>
             Remember the places
@@ -126,6 +125,7 @@ export default function HomePage() {
                 <p>{moment.copy}</p>
               </div>
               <div className={`memory-ticket memory-ticket--${moment.tone}`}>
+                <DemoPhoto />
                 <div className="memory-ticket__header">
                   <span className="memory-ticket__avatar" aria-hidden="true">
                     {moment.initials}
@@ -148,11 +148,11 @@ export default function HomePage() {
       <section className="section section--feature">
         <div className="feature-map feature-map--screenshot">
           <Image
-            alt="The Astir app map showing personal and social place pins with the Woodcat Coffee recommendation ticket selected."
+            alt="Astir Feed interface preview with editorial typography, floating search, and a photo place card."
             className="feature-map__screen"
             fill
             sizes="(max-width: 900px) 100vw, 52vw"
-            src="/product/recme-map-ticket.jpg"
+            src="/product/astir/feed-light.webp"
           />
         </div>
         <div className="feature-copy">
@@ -162,7 +162,7 @@ export default function HomePage() {
             Internet ratings answer what everyone thinks. Astir helps you
             remember what your people thought—and whether it fits this moment.
           </p>
-          <p className="screenshot-note">Screens shown from an earlier version, when Astir was called rec.me.</p>
+          <p className="screenshot-note">Astir interface preview with example places.</p>
           <ul className="check-list">
             <li>One map for Check-ins and Wanna Go</li>
             <li>Follower and friend visibility, never a public feed</li>

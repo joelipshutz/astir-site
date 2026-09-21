@@ -14,3 +14,10 @@
 .open { background: var(--action-primary); color: var(--text-on-action); }
 .download { background: var(--terracotta-tint); color: var(--terracotta-dark); }
 .actions a:focus-visible { outline: 3px solid var(--text-ink); outline-offset: 4px; }
+/* Match the site's current editorial controls while preserving native card art. */
+.plan { padding: 28px; border: 1px solid var(--border-hairline); border-radius: 28px; background: var(--surface-bone); }
+.plan h1 { font-family: var(--font-display); }
+.actions a { border-radius: 17px; font-weight: 650; }
+.open { color: var(--text-ink); background: var(--terracotta); }
+.download { color: var(--text-ink); background: var(--canvas-warm); border: 1px solid var(--border-hairline); }
+@media (max-width: 560px) { .plan { margin: 28px 14px 48px; padding: 22px; border-radius: 22px; } }
