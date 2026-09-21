@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
+import "./astir-ui.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

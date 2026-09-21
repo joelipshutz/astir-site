@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { PublicPreview } from "@/lib/previews";
 import {
   appSchemeURL,
@@ -79,14 +80,7 @@ export function PublicPreviewPage({
     <main className="share-shell">
       <section className="share-preview">
         <div className="share-preview__visual" aria-hidden="true">
-          <div className="share-preview__map">
-            <span className="map-road map-road--one" />
-            <span className="map-road map-road--two" />
-            <span className="map-road map-road--three" />
-            <span className="map-pin map-pin--terracotta" />
-            <span className="map-pin map-pin--sky" />
-            <span className="map-pin map-pin--moss" />
-          </div>
+          <Image className="share-preview__art" src="/art/astir-contours.webp" alt="" fill sizes="(max-width: 800px) 100vw, 500px" />
           {preview?.image_url ? (
             // The URL comes from Astir's privacy-filtered preview RPC. Keep
             // it unproxied so the site never downloads a shared avatar itself.
@@ -101,7 +95,7 @@ export function PublicPreviewPage({
               referrerPolicy="no-referrer"
             />
           ) : (
-            <span className="share-preview__badge">{kind.slice(0, 1)}</span>
+            <Image className="share-preview__brand" src="/icon.png" width={96} height={96} alt="" />
           )}
         </div>
 

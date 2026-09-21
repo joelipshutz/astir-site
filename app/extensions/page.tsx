@@ -89,7 +89,7 @@ export default function ExtensionsPage() {
       <section className="extensions-intro">
         <p className="eyebrow">Four small superpowers</p>
         <h2>Astir should be close when a place is worth keeping.</h2>
-        <p>These real iPhone walkthroughs show an earlier version of Astir, formerly rec.me. The slow, focused loops pause whenever you want to follow a step at your own pace.</p>
+        <p>Follow these illustrated walkthroughs, then try the steps on your iPhone. Pause or move one step at a time whenever you need.</p>
       </section>
 
       <section className="extensions-lessons" id="extension-lessons">

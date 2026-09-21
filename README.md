@@ -2,6 +2,9 @@
 
 The public website and Universal Link fallback for Astir (formerly rec.me).
 
+Read [`DESIGN.md`](DESIGN.md) before changing visual components. The website
+combines psychedelic print artwork with the current Astir editorial UI.
+
 ## Local development
 
 ```bash
