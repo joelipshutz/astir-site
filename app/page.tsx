@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { InteractiveProductDemo } from "@/components/InteractiveProductDemo";
 import { primaryDownloadLabel, primaryDownloadURL } from "@/lib/site";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 const trustNotes = [
   {
@@ -10,7 +13,7 @@ const trustNotes = [
   },
   {
     label: "Private by design",
-    copy: "Stealth saves stay yours. rec.me never broadcasts live location."
+    copy: "Stealth saves stay yours. Astir never broadcasts live location."
   },
   {
     label: "Fast to capture",
@@ -65,13 +68,16 @@ export default function HomePage() {
     <main>
       <section className="hero">
         <div className="hero__copy">
-          <p className="eyebrow">Your trusted place memory</p>
+          <div className="hero__identity">
+            <Image src="/brand/astir-wordmark.png" alt="Astir — Oneness" width={1600} height={764} priority sizes="(max-width: 620px) 90vw, 480px" />
+          </div>
+          <p className="eyebrow">Your world, remembered together</p>
           <h1>
             Remember the places
             <span>worth going back to.</span>
           </h1>
           <p className="hero__lede">
-            rec.me turns your saves—and the places trusted people choose to
+            Astir turns your saves—and the places trusted people choose to
             share—into a map you can actually use.
           </p>
           <div className="hero__actions">
@@ -83,7 +89,7 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="hero__note">
-            iPhone first · private saves stay private · no live-location feed
+            Made for iPhone · Private saves stay private
           </p>
         </div>
 
@@ -104,7 +110,7 @@ export default function HomePage() {
           <p className="eyebrow">A map with a memory</p>
           <h2>Less collecting. More remembering.</h2>
           <p>
-            rec.me keeps the useful human details that disappear inside a
+            Astir keeps the useful human details that disappear inside a
             generic bookmark folder.
           </p>
         </header>
@@ -142,7 +148,7 @@ export default function HomePage() {
       <section className="section section--feature">
         <div className="feature-map feature-map--screenshot">
           <Image
-            alt="The rec.me app map showing personal and social place pins with the Woodcat Coffee recommendation ticket selected."
+            alt="The Astir app map showing personal and social place pins with the Woodcat Coffee recommendation ticket selected."
             className="feature-map__screen"
             fill
             sizes="(max-width: 900px) 100vw, 52vw"
@@ -153,9 +159,10 @@ export default function HomePage() {
           <p className="eyebrow">Trust travels with the place</p>
           <h2>Know whose recommendation you’re following.</h2>
           <p>
-            Internet ratings answer what everyone thinks. rec.me helps you
+            Internet ratings answer what everyone thinks. Astir helps you
             remember what your people thought—and whether it fits this moment.
           </p>
+          <p className="screenshot-note">Screens shown from an earlier version, when Astir was called rec.me.</p>
           <ul className="check-list">
             <li>One map for Check-ins and Wanna Go</li>
             <li>Follower and friend visibility, never a public feed</li>

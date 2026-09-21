@@ -47,7 +47,7 @@ const importsFrames: readonly ExtensionFrame[] = [
   },
   {
     src: "/product/extensions/share-sheet-google-maps.png",
-    caption: "Choose rec.me from the real iPhone share sheet",
+    caption: "Choose Astir from the real iPhone share sheet",
     detail: "Google Maps · Instagram · TikTok",
     view: "top",
     captionAt: "top",
@@ -55,7 +55,7 @@ const importsFrames: readonly ExtensionFrame[] = [
   },
   {
     src: "/product/extensions/share-extension-ready.png",
-    caption: "Tap Add to rec.me",
+    caption: "Tap Add to Astir",
     detail: "The source link comes with the place",
     view: "middle",
     tap: { left: 50, top: 55.1 }
@@ -63,7 +63,7 @@ const importsFrames: readonly ExtensionFrame[] = [
   {
     src: "/product/extensions/import-hub.png",
     caption: "Paste links or type one place per line",
-    detail: "Watch the places appear in rec.me’s real Import form",
+    detail: "Watch the places appear in Astir’s real Import form",
     view: "middle",
     captionAt: "top",
     typing: {
@@ -101,8 +101,8 @@ const actionFrames: readonly ExtensionFrame[] = [
   },
   {
     src: "/product/extensions/action-control-search.jpg",
-    caption: "Search for rec.me in the Controls picker",
-    detail: "Under rec.me, tap the Check-in control",
+    caption: "Search for Astir in the Controls picker",
+    detail: "Under Astir, tap the Check-in control",
     view: "middle",
     tap: { left: 15.5, top: 47.2 }
   },
@@ -122,7 +122,7 @@ const actionFrames: readonly ExtensionFrame[] = [
   },
   {
     src: "/product/recme-live-add-nearby.jpg",
-    caption: "rec.me opens Nearby places",
+    caption: "Astir opens Nearby places",
     detail: "Tap the place you are actually at",
     view: "middle",
     captionAt: "top",
@@ -141,7 +141,7 @@ const widgetsFrames: readonly ExtensionFrame[] = [
   {
     src: "/product/extensions/widgets-edit-home.png",
     caption: "Touch and hold the Home Screen, then tap Edit",
-    detail: "Choose Add Widget and search for rec.me",
+    detail: "Choose Add Widget and search for Astir",
     view: "top",
     tap: { left: 17.5, top: 3.7 }
   },
@@ -161,14 +161,14 @@ const widgetsFrames: readonly ExtensionFrame[] = [
   },
   {
     src: "/product/extensions/widget-search.png",
-    caption: "Search rec.me jumps straight to place search",
+    caption: "Search Astir jumps straight to place search",
     detail: "Medium widget · type the moment you land",
     view: "middle",
     captionAt: "top"
   },
   {
     src: "/product/recme-live-add-nearby.jpg",
-    caption: "Every shortcut lands in the real rec.me flow",
+    caption: "Every shortcut lands in the real Astir flow",
     detail: "Activity Calendar and Check-in Control are available too",
     view: "middle",
     captionAt: "top"
@@ -178,7 +178,7 @@ const widgetsFrames: readonly ExtensionFrame[] = [
 const shareFrames: readonly ExtensionFrame[] = [
   {
     src: "/product/extensions/share-sheet-google-maps.png",
-    caption: "Look for rec.me in the first row",
+    caption: "Look for Astir in the first row",
     detail: "The same share target appears in Maps, Safari, social apps, and Notes",
     view: "top",
     captionAt: "top",
@@ -194,22 +194,22 @@ const shareFrames: readonly ExtensionFrame[] = [
   },
   {
     src: "/product/extensions/share-more-apps.png",
-    caption: "Find rec.me under Apps, then tap Edit",
+    caption: "Find Astir under Apps, then tap Edit",
     detail: "You only have to set this up once",
     view: "top",
     tap: { left: 90.2, top: 8.7 }
   },
   {
     src: "/product/extensions/share-edit-favorites.png",
-    caption: "Add rec.me to Favorites",
+    caption: "Add Astir to Favorites",
     detail: "It stays within reach the next time you share a place",
     view: "top",
     tap: { left: 12.9, top: 29.3 }
   },
   {
     src: "/product/extensions/share-extension-ready.png",
-    caption: "The real extension queues the link for rec.me",
-    detail: "Tap Add to rec.me, then review the place in the app",
+    caption: "The real extension queues the link for Astir",
+    detail: "Tap Add to Astir, then review the place in the app",
     view: "middle",
     captionAt: "top",
     tap: { left: 50, top: 55.1 }
@@ -354,12 +354,12 @@ function RealExtensionDemo({
 export function ExtensionsDemo({ kind }: { kind: ExtensionsDemoKind }) {
   switch (kind) {
     case "imports":
-      return <RealExtensionDemo frames={importsFrames} label="Real iPhone walkthrough for importing a place into rec.me" timing={importsTiming} />;
+      return <RealExtensionDemo frames={importsFrames} label="Real iPhone walkthrough for importing a place into Astir" timing={importsTiming} />;
     case "action":
-      return <RealExtensionDemo frames={actionFrames} label="Real iPhone walkthrough for setting up and using the rec.me Action Button" timing={actionTiming} />;
+      return <RealExtensionDemo frames={actionFrames} label="Real iPhone walkthrough for setting up and using the Astir Action Button" timing={actionTiming} />;
     case "widgets":
-      return <RealExtensionDemo frames={widgetsFrames} label="Real iPhone walkthrough for adding and using rec.me widgets" timing={widgetsTiming} />;
+      return <RealExtensionDemo frames={widgetsFrames} label="Real iPhone walkthrough for adding and using Astir widgets" timing={widgetsTiming} />;
     case "share":
-      return <RealExtensionDemo frames={shareFrames} label="Real iPhone walkthrough for finding and favoriting the rec.me share extension" timing={shareTiming} />;
+      return <RealExtensionDemo frames={shareFrames} label="Real iPhone walkthrough for finding and favoriting the Astir share extension" timing={shareTiming} />;
   }
 }

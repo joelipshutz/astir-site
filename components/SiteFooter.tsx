@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer__brand">
         <BrandMark compact />
-        <p>Places worth remembering, from people you trust.</p>
+        <p>Places worth remembering, from people you trust. Astir, formerly rec.me.</p>
       </div>
       <nav className="site-footer__links" aria-label="Legal and support">
         <Link href="/how-it-works">How it works</Link>
@@ -19,7 +19,7 @@ export function SiteFooter() {
         <Link href="/support">Support</Link>
       </nav>
       <p className="site-footer__legal">
-        © {new Date().getFullYear()} rec.me. Built for real recommendations,
+        © {new Date().getFullYear()} Astir. Built for real recommendations,
         not live location.
       </p>
     </footer>

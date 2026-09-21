@@ -1,20 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700;800&family=Funnel+Sans:wght@400;500;600;700&display=swap");
-
 :root {
-  --canvas-warm: #f3dfca;
-  --surface-bone: #fff7ea;
-  --surface-raised: #ffffff;
-  --surface-sand: #efe3d0;
-  --text-ink: #2c2118;
-  --text-muted: #7b6555;
-  --text-faint: #735e4e;
-  --text-on-action: #fff7ea;
-  --border-hairline: #dbc2aa;
-  --border-strong: #c9ac8f;
-  --terracotta: #d46f4d;
-  --terracotta-dark: #a94f35;
-  --action-primary: #b45439;
-  --terracotta-tint: #f6e0d2;
+  --canvas-warm: #f2e9db;
+  --surface-bone: #fbf6ed;
+  --surface-raised: #fffdf8;
+  --surface-sand: #e7ddcf;
+  --text-ink: #141714;
+  --text-muted: #5d625b;
+  --text-faint: #656960;
+  --text-on-action: #fbf6ed;
+  --border-hairline: #d5ccbe;
+  --border-strong: #afa99e;
+  --terracotta: #f05a3c;
+  --terracotta-dark: #b23620;
+  --action-primary: #b23620;
+  --terracotta-tint: #f5d9ce;
   --sun-tint: #f4e8c9;
   --sky-tint: #dbeaf1;
   --pin-social: #69b8d7;
@@ -23,8 +21,9 @@
   --cat-sun: #e3b64b;
   --state-success: #3f8f64;
   --state-error: #b84a3a;
-  --font-display: "Funnel Display", "Trebuchet MS", sans-serif;
-  --font-body: "Funnel Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "Avenir Next", Avenir, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-label: "Avenir Next Condensed", "Arial Narrow", var(--font-body);
   --font-serif: ui-serif, "New York", "Iowan Old Style", Georgia, serif;
   --shadow-card: 0 1px 2px rgba(44, 33, 24, 0.06),
     0 18px 48px rgba(44, 33, 24, 0.12);
@@ -134,60 +133,11 @@ img {
   display: none;
 }
 
-.brand-mark {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand-mark--compact {
-  flex-direction: row;
-  gap: 8px;
-}
-
-.brand-wordmark {
-  font-family: var(--font-serif);
-  font-size: 34px;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.brand-mark--compact .brand-wordmark {
-  font-size: 24px;
-}
-
-.brand-pin {
-  position: relative;
-  width: 38px;
-  height: 38px;
-  border: 5px solid var(--terracotta);
-  border-radius: 50% 50% 50% 10%;
-  transform: rotate(-45deg);
-}
-
-.brand-mark--compact .brand-pin {
-  width: 22px;
-  height: 22px;
-  border-width: 3px;
-}
-
-.brand-pin::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--terracotta);
-  transform: translate(-50%, -50%);
-}
-
-.brand-mark--compact .brand-pin::after {
-  width: 5px;
-  height: 5px;
-}
+.brand-mark { display: inline-flex; align-items: center; gap: 12px; }
+.brand-icon { width: 48px; height: 48px; }
+.brand-wordmark { font-family: var(--font-display); font-size: 32px; font-weight: 600; letter-spacing: .03em; line-height: 1; }
+.brand-mark--compact .brand-icon { width: 40px; height: 40px; }
+.brand-mark--compact .brand-wordmark { font-size: 27px; }
 
 .button {
   min-height: 48px;
@@ -282,9 +232,9 @@ img {
   max-width: 720px;
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(52px, 6.7vw, 88px);
-  font-weight: 800;
-  line-height: 0.95;
+  font-size: clamp(48px, 5.6vw, 74px);
+  font-weight: 500;
+  line-height: 1.02;
 }
 
 .hero__copy h1 span {
@@ -4387,3 +4337,23 @@ img {
 /* A shared snapshot is one tappable card with its native artwork intact. */
 .share-preview--card { display: flex; flex-direction: column; max-width: 520px; padding: 20px; gap: 20px; }
 .share-card-image { display: block; width: 100%; height: auto; border-radius: 20px; }
+
+/* Astir: approved Paper, Ink and Signal identity. Artwork is never recolored. */
+.hero__identity { max-width: 480px; margin-bottom: 28px; background: #000; }
+.hero__identity img { width: 100%; height: auto; }
+.eyebrow { font-family: var(--font-label); }
+h1, h2 { text-wrap: balance; }
+.screenshot-note, .feature-copy > .screenshot-note { color: var(--text-muted); font-size: 12px; line-height: 1.5; }
+.hero__product > .screenshot-note { margin: 0; text-align: center; }
+.product-demo__hint { background: var(--action-primary); }
+.extensions-hero__center { background: transparent; box-shadow: none; transform: none; align-content: center; gap: 8px; color: var(--text-ink); }
+.extensions-hero__center img { width: 100%; height: auto; }
+.extensions-hero__center strong { font-family: var(--font-display); }
+.cta, .motion-page__cta, .extensions-page__cta { color: var(--text-ink); }
+.cta .eyebrow, .motion-page__cta .eyebrow { color: var(--text-ink); opacity: 1; }
+.extensions-page__cta .eyebrow { color: var(--text-ink); }
+:where(a, button, summary):focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 4px; }
+@media (max-width: 620px) {
+  .hero__identity { max-width: 360px; margin-bottom: 24px; }
+  .brand-mark--compact .brand-wordmark { font-size: 25px; }
+}

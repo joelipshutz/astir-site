@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type BrandMarkProps = {
   compact?: boolean;
 };
@@ -5,10 +7,8 @@ type BrandMarkProps = {
 export function BrandMark({ compact = false }: BrandMarkProps) {
   return (
     <span className={compact ? "brand-mark brand-mark--compact" : "brand-mark"}>
-      <span className="brand-pin" aria-hidden="true">
-        <span />
-      </span>
-      <span className="brand-wordmark">rec.me</span>
+      <Image className="brand-icon" src="/icon.png" alt="" width={48} height={48} />
+      <span className="brand-wordmark">ASTIR</span>
     </span>
   );
 }

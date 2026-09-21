@@ -3,19 +3,20 @@ import { DocumentPage } from "@/components/DocumentPage";
 import { SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata = {
+  alternates: { canonical: "/terms" },
   title: "Terms of Use",
-  description: "The terms that apply when you use rec.me."
+  description: "The terms that apply when you use Astir."
 };
 
 export default function TermsPage() {
   return (
     <DocumentPage
       eyebrow="Terms"
-      title="Use rec.me like a good guest."
-      intro="These Terms govern access to the rec.me app, website, and related services. By creating an account or using rec.me, you agree to them."
+      title="Use Astir like a good guest."
+      intro="These Terms govern access to the Astir (formerly rec.me) app, website, and related services. By creating an account or using Astir, you agree to them."
     >
       <section>
-        <h2>Who may use rec.me</h2>
+        <h2>Who may use Astir</h2>
         <p>
           You must be at least 13 years old, or the minimum age required in
           your country, and legally able to agree to these Terms. You are
@@ -27,7 +28,7 @@ export default function TermsPage() {
       <section>
         <h2>Your content and your license to us</h2>
         <p>
-          You keep ownership of content you create. You give rec.me a limited,
+          You keep ownership of content you create. You give Astir a limited,
           worldwide, non-exclusive license to host, store, reproduce, process,
           adapt for technical display, and show that content only as needed to
           operate, secure, improve, and provide the service according to your
@@ -44,13 +45,13 @@ export default function TermsPage() {
         <h2>Acceptable use</h2>
         <p>
           Follow our <Link href="/community">Community Standards</Link>. You
-          may not use rec.me to harass, threaten, impersonate, exploit, stalk,
+          may not use Astir to harass, threaten, impersonate, exploit, stalk,
           expose private information, infringe rights, distribute malware,
           scrape or reverse engineer the service, evade access controls, or
           interfere with other people or our systems.
         </p>
         <p>
-          Do not use rec.me as an emergency service, a live-location tracker,
+          Do not use Astir as an emergency service, a live-location tracker,
           or a source of professional medical, legal, safety, or financial
           advice.
         </p>
@@ -74,7 +75,7 @@ export default function TermsPage() {
           We may investigate reports and remove, limit, or preserve content;
           restrict features; suspend or terminate accounts; and cooperate with
           lawful requests when reasonably necessary to protect people, enforce
-          these Terms, or secure rec.me. We are not required to monitor every
+          these Terms, or secure Astir. We are not required to monitor every
           piece of content.
         </p>
       </section>
@@ -82,7 +83,7 @@ export default function TermsPage() {
       <section>
         <h2>Service changes and availability</h2>
         <p>
-          rec.me is evolving. We may add, change, suspend, or discontinue
+          Astir is evolving. We may add, change, suspend, or discontinue
           features, and we may limit use to protect reliability or comply with
           law. We try to preserve user data and provide notice when practical,
           but uninterrupted or error-free operation is not guaranteed.
@@ -92,14 +93,14 @@ export default function TermsPage() {
       <section>
         <h2>Disclaimers and liability</h2>
         <p>
-          To the extent permitted by law, rec.me is provided “as is” and “as
+          To the extent permitted by law, Astir is provided “as is” and “as
           available,” without warranties of merchantability, fitness for a
           particular purpose, or non-infringement. We are not responsible for
           decisions, travel, venue conditions, conduct of other users, or
-          third-party services based on content in rec.me.
+          third-party services based on content in Astir.
         </p>
         <p>
-          To the extent permitted by law, rec.me and its operators will not be
+          To the extent permitted by law, Astir and its operators will not be
           liable for indirect, incidental, special, consequential, or punitive
           damages, or loss of data, profits, goodwill, or opportunities. Rights
           that cannot legally be waived remain unaffected.
@@ -109,7 +110,7 @@ export default function TermsPage() {
       <section>
         <h2>Ending use</h2>
         <p>
-          You may stop using rec.me at any time and delete your account from
+          You may stop using Astir at any time and delete your account from
           Settings. Provisions that logically survive termination—including
           ownership, enforcement, disclaimers, and liability limits—continue
           to apply.

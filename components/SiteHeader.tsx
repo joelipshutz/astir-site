@@ -7,7 +7,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <Link className="site-logo" href="/" aria-label="rec.me home">
+        <Link className="site-logo" href="/" aria-label="Astir home">
           <BrandMark compact />
         </Link>
         <nav className="site-nav" aria-label="Main navigation">

@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/import-help"
   ].map((path) => ({
     url: `${SITE_URL}${path}`,
-    lastModified: new Date("2026-08-13"),
+    lastModified: new Date("2026-09-21"),
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: path === "" ? 1 : 0.7
   }));

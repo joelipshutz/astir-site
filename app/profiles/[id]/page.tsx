@@ -18,7 +18,7 @@ export async function generateMetadata({
     preview,
     fallbackTitle: "Shared profile",
     fallbackDescription:
-      "Open this shared profile in rec.me. Private saves stay private."
+      "Open this shared profile in Astir. Private saves stay private."
   });
 }
 
