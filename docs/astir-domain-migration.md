@@ -1,7 +1,7 @@
 # Astir website migration (REC-586)
 
 The existing Next.js website remains on the Hotchkiss Technologies Vercel
-project `astir-site`, connected to `joelipshutz/recme-site`. The new public
+project `astir-site`, connected to `joelipshutz/astir-site`. The new public
 canonical origin is `https://astirmovement.com`.
 
 ## Brand
@@ -30,9 +30,11 @@ the former rec.me version. Do not present these as current Astir screenshots.
    after the destination serves the new site. Verify old marketing URLs return
    308 redirects to the same new path, with their query string intact.
 5. Keep `getrec.me` and `www.getrec.me` attached to this project. Never replace
-   them with registrar forwarding or a blanket Vercel redirect. Shared links,
-   cards, plans, invitations, TikTok callbacks, and AASA files remain available
-   on the old host for already-installed apps and previously shared URLs.
+   them with registrar forwarding or a blanket redirect to the new domain.
+   The existing `www.getrec.me` → `getrec.me` redirect preserves paths; the
+   apex applies the marketing-only redirects above. Shared links, cards, plans,
+   invitations, TikTok callbacks, and AASA files remain available on the old
+   host for already-installed apps and previously shared URLs.
 
 The existing `recme://` native scheme, backend RPCs, environment variable names,
 support mailbox, app store ID, bundle/team IDs and authentication settings stay
