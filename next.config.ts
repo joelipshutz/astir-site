@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { marketingRedirects } from "./lib/domain-migration";
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -13,6 +14,10 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  async redirects() {
+    // Enable only after both Astir domains have valid DNS and TLS on this project.
+    return marketingRedirects(process.env.ASTIR_DOMAIN_REDIRECT_ENABLED === "true");
+  },
   async headers() {
     return [
       {

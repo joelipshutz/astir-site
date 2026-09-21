@@ -3,8 +3,9 @@ import { DocumentPage } from "@/components/DocumentPage";
 import { SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata = {
+  alternates: { canonical: "/privacy" },
   title: "Privacy Policy",
-  description: "How rec.me collects, uses, shares, and deletes information."
+  description: "How Astir collects, uses, shares, and deletes information."
 };
 
 export default function PrivacyPage() {
@@ -12,16 +13,16 @@ export default function PrivacyPage() {
     <DocumentPage
       eyebrow="Privacy"
       title="Your map is personal. Our privacy rules should be plain."
-      intro="This policy explains what rec.me collects, why we need it, which services help us operate, and the choices you have."
+      intro="Astir (formerly rec.me). This policy explains what Astir collects, why we need it, which services help us operate, and the choices you have."
     >
       <section>
         <h2>At a glance</h2>
         <ul>
-          <li>rec.me does not sell personal information.</li>
-          <li>rec.me does not broadcast or sell live location.</li>
+          <li>Astir does not sell personal information.</li>
+          <li>Astir does not broadcast or sell live location.</li>
           <li>Stealth saves are visible only to you.</li>
           <li>
-            Non-stealth saves are shared inside rec.me according to the
+            Non-stealth saves are shared inside Astir according to the
             visibility shown in the app; they are not a public internet feed.
           </li>
           <li>You can delete your account from Settings.</li>
@@ -40,7 +41,7 @@ export default function PrivacyPage() {
 
         <h3>Places and content you create</h3>
         <p>
-          rec.me stores the places you save, Check-in or Wanna Go status, ratings,
+          Astir stores the places you save, Check-in or Wanna Go status, ratings,
           notes, tags, answers, lists, collaborative-list activity, check-ins,
           imported links, source information, and photos you choose to add.
           Some content may include location information associated with a
@@ -60,7 +61,7 @@ export default function PrivacyPage() {
           We may process device and app version, notification tokens, sync
           state, coarse error categories, crash diagnostics, and product
           interactions needed to operate and improve the service. Product
-          analytics are disabled when rec.me is not configured with an
+          analytics are disabled when Astir is not configured with an
           analytics provider.
         </p>
       </section>
@@ -68,7 +69,7 @@ export default function PrivacyPage() {
       <section>
         <h2>Location, maps, contacts, and imports</h2>
         <p>
-          When you choose a nearby-place feature, rec.me asks iOS for location
+          When you choose a nearby-place feature, Astir asks iOS for location
           to suggest nearby places. We use that reading for the requested
           feature and do not provide a live-location broadcast. Place search
           and directions may use Apple MapKit. Representative venue photos may
@@ -82,7 +83,7 @@ export default function PrivacyPage() {
           only as needed to complete, recover, secure, and audit the import.
         </p>
         <p>
-          If rec.me offers Contacts matching, it will request permission first
+          If Astir offers Contacts matching, it will request permission first
           and use the permission only for the feature described in the app.
           You can change system permission access in iOS Settings.
         </p>
@@ -96,7 +97,7 @@ export default function PrivacyPage() {
           <li>Resolve imports, search for places, and show requested media.</li>
           <li>Send notifications you enable.</li>
           <li>Prevent abuse, investigate failures, and maintain the service.</li>
-          <li>Measure and improve rec.me using privacy-limited diagnostics.</li>
+          <li>Measure and improve Astir using privacy-limited diagnostics.</li>
           <li>Comply with law and enforce our Terms and Community Standards.</li>
         </ul>
       </section>
@@ -124,7 +125,7 @@ export default function PrivacyPage() {
       <section>
         <h2>Visibility and public links</h2>
         <p>
-          rec.me is not a public-location feed. Inside the app, your content is
+          Astir is not a public-location feed. Inside the app, your content is
           shown according to the visibility displayed when you save or share
           it. Stealth content stays private. A public link can reveal the
           limited preview shown on that web page; private notes and live
@@ -144,7 +145,7 @@ export default function PrivacyPage() {
           before scheduled deletion.
         </p>
         <p>
-          You can permanently delete your account in rec.me under Profile →
+          You can permanently delete your account in Astir under Profile →
           Settings → Delete my account. The deletion flow is designed to remove
           your identity, owned database records, stored media, notification
           tokens, and dependent content, subject to limited legal, fraud, and
@@ -179,7 +180,7 @@ export default function PrivacyPage() {
       <section>
         <h2>Children</h2>
         <p>
-          rec.me is not directed to children under 13, or the minimum age
+          Astir is not directed to children under 13, or the minimum age
           required in their country. If you believe a child provided personal
           information without appropriate permission, contact us.
         </p>

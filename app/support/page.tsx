@@ -3,8 +3,9 @@ import { DocumentPage } from "@/components/DocumentPage";
 import { SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata = {
+  alternates: { canonical: "/support" },
   title: "Support",
-  description: "Get help with your rec.me account, places, imports, and safety."
+  description: "Get help with your Astir account, places, imports, and safety."
 };
 
 export default function SupportPage() {
@@ -15,13 +16,13 @@ export default function SupportPage() {
       intro="The fastest support request includes your device, app build, approximate time, and the exact step where things went wrong."
     >
       <section className="support-callout">
-        <h2>Contact rec.me support</h2>
+        <h2>Contact Astir support</h2>
         <p>
           Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
         </p>
         <a
           className="button"
-          href={`mailto:${SUPPORT_EMAIL}?subject=rec.me%20support%20request`}
+          href={`mailto:${SUPPORT_EMAIL}?subject=Astir%20support%20request`}
         >
           Start a support email
         </a>
@@ -31,7 +32,7 @@ export default function SupportPage() {
         <h2>What to include</h2>
         <ul>
           <li>iPhone model and iOS version</li>
-          <li>rec.me version and build from TestFlight or the App Store</li>
+          <li>Astir version and build from TestFlight or the App Store</li>
           <li>Your username or account email when the problem is account-specific</li>
           <li>Approximate date, time, and time zone</li>
           <li>Exact steps and what you expected to happen</li>
@@ -55,7 +56,7 @@ export default function SupportPage() {
         <h2>Privacy and account deletion</h2>
         <p>
           Review <Link href="/privacy-choices">Privacy Choices</Link>. Account
-          deletion is available inside rec.me under Profile → Settings → Delete
+          deletion is available inside Astir under Profile → Settings → Delete
           my account.
         </p>
       </section>
@@ -67,7 +68,7 @@ export default function SupportPage() {
           in-app Report action for abusive content or behavior so the safety
           team receives the relevant private evidence. If the Report action is
           unavailable, email{" "}
-          <a href={`mailto:${SUPPORT_EMAIL}?subject=rec.me%20safety%20report`}>
+          <a href={`mailto:${SUPPORT_EMAIL}?subject=Astir%20safety%20report`}>
             {SUPPORT_EMAIL}
           </a>{" "}
           with “Safety report” in the subject and include the profile or
@@ -79,7 +80,7 @@ export default function SupportPage() {
       <section>
         <h2>Service status</h2>
         <p>
-          If sign-in, sync, or imports are temporarily unavailable, keep rec.me
+          If sign-in, sync, or imports are temporarily unavailable, keep Astir
           installed and avoid repeatedly recreating the same item. Local saves
           and drafts are designed to retry when the connection recovers.
         </p>

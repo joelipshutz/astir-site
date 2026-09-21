@@ -26,25 +26,25 @@ const fallbackCopy: Record<
     eyebrow: "Shared profile",
     title: "Someone wants you to see their map.",
     description:
-      "Open rec.me to see the places they chose to share. Private saves always stay private."
+      "Open Astir to see the places they chose to share. Private saves always stay private."
   },
   place: {
     eyebrow: "Shared place",
     title: "A place worth remembering.",
     description:
-      "Open rec.me to see why this place was shared and save it to your own map."
+      "Open Astir to see why this place was shared and save it to your own map."
   },
   list: {
     eyebrow: "Shared list",
     title: "A shortlist from someone you trust.",
     description:
-      "Open rec.me to view this list. Access still follows the owner’s privacy settings."
+      "Open Astir to view this list. Access still follows the owner’s privacy settings."
   },
   invite: {
     eyebrow: "List invitation",
     title: "You’re invited to build a list together.",
     description:
-      "Open rec.me to review and accept. Invitations can expire or be revoked."
+      "Open Astir to review and accept. Invitations can expire or be revoked."
   }
 };
 
@@ -88,7 +88,7 @@ export function PublicPreviewPage({
             <span className="map-pin map-pin--moss" />
           </div>
           {preview?.image_url ? (
-            // The URL comes from rec.me's privacy-filtered preview RPC. Keep
+            // The URL comes from Astir's privacy-filtered preview RPC. Keep
             // it unproxied so the site never downloads a shared avatar itself.
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -127,11 +127,11 @@ export function PublicPreviewPage({
             </a>
           </div>
           <p className="share-preview__privacy">
-            rec.me never publishes private notes or live location. If this
+            Astir never publishes private notes or live location. If this
             content is unavailable, it may be private, expired, or revoked.
           </p>
           <Link className="text-link" href="/">
-            Learn about rec.me
+            Learn about Astir
           </Link>
         </div>
       </section>

@@ -18,7 +18,7 @@ export async function generateMetadata({
     preview,
     fallbackTitle: "Shared list",
     fallbackDescription:
-      "Open this shared list in rec.me. Access follows the owner’s privacy settings.",
+      "Open this shared list in Astir. Access follows the owner’s privacy settings.",
     alwaysNoIndex: true
   });
 }

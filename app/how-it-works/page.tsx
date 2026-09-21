@@ -5,9 +5,10 @@ import { HowItWorksDemo } from "@/components/HowItWorksDemo";
 import { primaryDownloadLabel, primaryDownloadURL } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/how-it-works" },
   title: "How it works",
   description:
-    "See how rec.me turns a check-in, trusted context, and a future search into one useful place memory."
+    "See how Astir turns a check-in, trusted context, and a future search into one useful place memory."
 };
 
 const chapters = [
@@ -29,14 +30,14 @@ const chapters = [
     number: "03",
     eyebrow: "Find it when it matters",
     title: "Search the way you remember.",
-    copy: "Ask for “quiet coffee with good wifi” or “Ryan’s favorite sandwiches in LA.” rec.me searches the human context, not just the category.",
+    copy: "Ask for “quiet coffee with good wifi” or “Ryan’s favorite sandwiches in LA.” Astir searches the human context, not just the category.",
     demo: "search"
   },
   {
     number: "04",
     eyebrow: "Capture where you are",
     title: "Nearby places, one action away.",
-    copy: "Tap Add and rec.me brings up useful places around you immediately, so saving the moment is faster than organizing it later.",
+    copy: "Tap Add and Astir brings up useful places around you immediately, so saving the moment is faster than organizing it later.",
     demo: "nearby"
   }
 ] as const;
@@ -46,10 +47,10 @@ export default function HowItWorksPage() {
     <main className="motion-page">
       <section className="motion-hero">
         <div className="motion-hero__copy motion-reveal">
-          <p className="eyebrow">How rec.me works</p>
+          <p className="eyebrow">How Astir works</p>
           <h1>A place becomes useful when its story stays attached.</h1>
           <p>
-            rec.me turns a quick check-in into a trusted place memory you can
+            Astir turns a quick check-in into a trusted place memory you can
             actually find again.
           </p>
           <div className="motion-hero__actions">
@@ -82,7 +83,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="motion-principles" aria-label="The rec.me loop">
+      <section className="motion-principles" aria-label="The Astir loop">
         <span>Check in</span>
         <i aria-hidden="true">→</i>
         <span>Keep the context</span>
@@ -96,7 +97,7 @@ export default function HowItWorksPage() {
         <header className="motion-story__header motion-reveal">
           <p className="eyebrow">One place, still useful later</p>
           <h2>Follow the memory from map pin to future plan.</h2>
-          <p className="motion-story__proof">Every frame below comes directly from the current rec.me iPhone app.</p>
+          <p className="motion-story__proof">These real app walkthroughs were captured before the Astir rebrand. You’ll see the former rec.me name in some screens.</p>
         </header>
 
         <div className="motion-story__route" aria-hidden="true">

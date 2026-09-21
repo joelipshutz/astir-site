@@ -17,7 +17,7 @@ export async function generateMetadata({
     identifier: id,
     preview,
     fallbackTitle: "Shared place",
-    fallbackDescription: "Open this shared place in rec.me."
+    fallbackDescription: "Open this shared place in Astir."
   });
 }
 

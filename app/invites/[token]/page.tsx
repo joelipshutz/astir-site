@@ -18,7 +18,7 @@ export async function generateMetadata({
     preview,
     fallbackTitle: "List invitation",
     fallbackDescription:
-      "Open rec.me to review this collaborative-list invitation.",
+      "Open Astir to review this collaborative-list invitation.",
     alwaysNoIndex: true
   });
 }

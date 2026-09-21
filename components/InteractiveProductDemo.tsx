@@ -60,12 +60,12 @@ const mapPins = {
 
 const fixedMapScreen = {
   src: "/product/recme-map-you.jpg",
-  alt: "A fixed rec.me map viewport where place pins appear and disappear as filters change."
+  alt: "A fixed Astir map viewport where place pins appear and disappear as filters change."
 } as const;
 
 const ticketScreen = {
   src: "/product/recme-feed-tickets.jpg",
-  alt: "The rec.me iPhone Feed showing a Bar Nido check-in and a Larchmont Noodles Wanna save as notched tickets.",
+  alt: "The Astir iPhone Feed showing a Bar Nido check-in and a Larchmont Noodles Wanna save as notched tickets.",
   stampTitle: "Real check-in tickets",
   stampCopy: "tap either glowing ticket"
 } as const;
@@ -154,7 +154,8 @@ export function InteractiveProductDemo() {
     selectedID === "map" ? selectedMap : (selectedTicket ?? ticketScreen);
 
   return (
-    <div className="hero__product" aria-label="Explore real rec.me app screens">
+    <div className="hero__product" aria-label="Explore real Astir app screens">
+      <p className="screenshot-note">Explore the app · Screens from the rec.me era</p>
       <div className="product-demo__switcher" aria-label="Choose an app screen">
         {productScreens.map((screen) => (
           <button

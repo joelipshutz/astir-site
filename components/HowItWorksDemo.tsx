@@ -100,7 +100,7 @@ export function DemoShell({
   return (
     <div className="app-demo" aria-label={label} ref={demoRef}>
       <div className="app-demo__chrome">
-        <span>rec.me demo</span>
+        <span>Astir demo</span>
         {reducedMotion ? (
           <span className="app-demo__motion-state">Static view</span>
         ) : (
@@ -241,7 +241,7 @@ const searchFrames: readonly RealFrame[] = [
     view: "top",
     query: { text: "quiet coffee shop with good wifi", target: "feed", type: true }
   },
-  { src: "/product/recme-live-feed-search.jpg", caption: "rec.me understands the context", focus: focus.resultSearch, view: "top" },
+  { src: "/product/recme-live-feed-search.jpg", caption: "Astir understands the context", focus: focus.resultSearch, view: "top" },
   { src: "/product/recme-live-feed-search.jpg", caption: "Then ranks real places with trusted notes", focus: focus.quietResult, view: "upper" },
   {
     src: "/product/recme-live-feed.jpg",
@@ -257,7 +257,7 @@ const searchFrames: readonly RealFrame[] = [
     view: "top",
     query: { text: "Ryan’s favorite places in LA", target: "feed", type: true }
   },
-  { src: "/product/recme-live-feed-search-ryan.jpg", caption: "rec.me understands Ryan and the location", focus: focus.resultSearch, view: "top" },
+  { src: "/product/recme-live-feed-search-ryan.jpg", caption: "Astir understands Ryan and the location", focus: focus.resultSearch, view: "top" },
   { src: "/product/recme-live-feed-search-ryan.jpg", caption: "The results keep Ryan’s notes and ratings attached", focus: focus.ryanResult, view: "upper" }
 ];
 
@@ -403,7 +403,7 @@ export function HowItWorksDemo({ kind }: { kind: HowItWorksDemoKind }) {
       return (
         <RealDemo
           frames={captureFrames}
-          label="Real rec.me app sequence for searching Woodcat Coffee and completing a check-in"
+          label="Real Astir app sequence for searching Woodcat Coffee and completing a check-in"
           timing={captureTiming}
         />
       );
@@ -411,7 +411,7 @@ export function HowItWorksDemo({ kind }: { kind: HowItWorksDemoKind }) {
       return (
         <RealDemo
           frames={trustFrames}
-          label="Real rec.me app sequence for opening a trusted place from the map"
+          label="Real Astir app sequence for opening a trusted place from the map"
           timing={trustTiming}
         />
       );
@@ -419,7 +419,7 @@ export function HowItWorksDemo({ kind }: { kind: HowItWorksDemoKind }) {
       return (
         <RealDemo
           frames={searchFrames}
-          label="Real rec.me app sequence for natural-language Feed searches"
+          label="Real Astir app sequence for natural-language Feed searches"
           timing={searchTiming}
         />
       );
@@ -427,7 +427,7 @@ export function HowItWorksDemo({ kind }: { kind: HowItWorksDemoKind }) {
       return (
         <RealDemo
           frames={nearbyFrames}
-          label="Real rec.me app sequence for opening Add and seeing nearby places"
+          label="Real Astir app sequence for opening Add and seeing nearby places"
           timing={nearbyTiming}
         />
       );

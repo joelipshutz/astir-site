@@ -1,4 +1,7 @@
-# getrec.me DNS and site launch handoff
+# getrec.me DNS and site launch handoff (historical)
+
+For the current Astir migration, use [astir-domain-migration.md](astir-domain-migration.md).
+The Vercel project is now named `astir-site`. The records below are a historical baseline.
 
 Verified on August 14, 2026. DNS is managed in Squarespace
 (`nsc1`–`nsc4.squarespacedns.com`) and the website is hosted by the Vercel

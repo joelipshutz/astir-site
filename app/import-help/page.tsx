@@ -1,9 +1,10 @@
 import { DocumentPage } from "@/components/DocumentPage";
 
 export const metadata = {
+  alternates: { canonical: "/import-help" },
   title: "Import Help",
   description:
-    "How to bring places into rec.me from maps, social posts, messages, and photos."
+    "How to bring places into Astir from maps, social posts, messages, and photos."
 };
 
 const sources = [
@@ -11,7 +12,7 @@ const sources = [
     title: "Google Maps",
     steps: [
       "Open the place or public saved-list link in Google Maps.",
-      "Tap Share, then choose rec.me. If rec.me is not visible, tap More.",
+      "Tap Share, then choose Astir. If Astir is not visible, tap More.",
       "Review the matched places before adding them to your map."
     ]
   },
@@ -19,8 +20,8 @@ const sources = [
     title: "Instagram and TikTok",
     steps: [
       "Share the post or copy its public link.",
-      "Choose rec.me in the share sheet, or paste the link under Add → Import.",
-      "Keep the source available while rec.me resolves the mentioned place.",
+      "Choose Astir in the share sheet, or paste the link under Add → Import.",
+      "Keep the source available while Astir resolves the mentioned place.",
       "Choose the right candidate when a post mentions more than one place."
     ]
   },
@@ -39,7 +40,7 @@ const sources = [
       "From Add, use the camera menu in search.",
       "Choose Take a Photo or Photo Library.",
       "Allow photo or camera access only when iOS asks.",
-      "Review any name, location, or text rec.me finds before saving."
+      "Review any name, location, or text Astir finds before saving."
     ]
   }
 ];
@@ -49,7 +50,7 @@ export default function ImportHelpPage() {
     <DocumentPage
       eyebrow="Import help"
       title="Bring the place. Leave the clutter."
-      intro="rec.me turns shared links, screenshots, and copied text into place candidates. You always review the match before it reaches your map."
+      intro="Astir turns shared links, screenshots, and copied text into place candidates. You always review the match before it reaches your map."
     >
       {sources.map((source) => (
         <section key={source.title}>

@@ -2,8 +2,9 @@ import { DocumentPage } from "@/components/DocumentPage";
 import { SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata = {
+  alternates: { canonical: "/community" },
   title: "Community Standards",
-  description: "The standards for safe, useful participation in rec.me."
+  description: "The standards for safe, useful participation in Astir."
 };
 
 export default function CommunityPage() {
@@ -11,7 +12,7 @@ export default function CommunityPage() {
     <DocumentPage
       eyebrow="Community"
       title="Recommendations should feel like they came from someone you trust."
-      intro="These standards apply to profiles, notes, lists, photos, tags, invitations, and every other shared surface in rec.me."
+      intro="These standards apply to profiles, notes, lists, photos, tags, invitations, and every other shared surface in Astir."
     >
       <section>
         <h2>Be honest and useful</h2>
@@ -27,7 +28,7 @@ export default function CommunityPage() {
         <p>
           Do not share someone’s home address, precise location, contact
           information, private messages, photos, or other personal information
-          without permission. Never use rec.me to track, stalk, or intimidate
+          without permission. Never use Astir to track, stalk, or intimidate
           someone. Respect Private Profile, Stealth, block, and invitation
           boundaries.
         </p>
@@ -47,7 +48,7 @@ export default function CommunityPage() {
       <section>
         <h2>No dangerous or illegal activity</h2>
         <p>
-          Do not use rec.me to facilitate violence, trafficking, fraud,
+          Do not use Astir to facilitate violence, trafficking, fraud,
           unauthorized sales, illegal drugs, weapons transactions, malware, or
           other unlawful activity. Do not encourage dangerous behavior or
           provide instructions intended to cause harm.
@@ -70,7 +71,7 @@ export default function CommunityPage() {
           breaks these standards. Blocking is a hard boundary: blocked users
           should not be able to see each other’s profiles or shared content.
           For immediate danger, contact local emergency services rather than
-          relying on rec.me.
+          relying on Astir.
         </p>
       </section>
 
@@ -92,7 +93,7 @@ export default function CommunityPage() {
           <a href={`mailto:${SUPPORT_EMAIL}?subject=Moderation%20appeal`}>
             {SUPPORT_EMAIL}
           </a>{" "}
-          with “Moderation appeal” in the subject. Include your rec.me username
+          with “Moderation appeal” in the subject. Include your Astir username
           and the decision you want reviewed, but do not send passwords,
           verification codes, private notes, or precise location.
         </p>

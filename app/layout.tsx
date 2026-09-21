@@ -8,34 +8,34 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "rec.me — places worth remembering",
-    template: "%s · rec.me"
+    default: "Astir — places worth remembering",
+    template: "%s · Astir"
   },
   description:
     "Remember places worth returning to and discover where trusted people have checked in.",
-  applicationName: "rec.me",
+  applicationName: "Astir",
   openGraph: {
-    title: "rec.me — places worth remembering",
+    title: "Astir — places worth remembering",
     description:
       "A searchable map of places you and the people you trust actually recommend.",
     url: SITE_URL,
-    siteName: "rec.me",
+    siteName: "Astir",
     type: "website",
     images: [
       {
-        url: "/og.png",
-        width: 1730,
-        height: 909,
-        alt: "rec.me — places worth remembering"
+        url: "/brand/astir-wordmark.png",
+        width: 1600,
+        height: 764,
+        alt: "Astir — places worth remembering"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "rec.me — places worth remembering",
+    title: "Astir — places worth remembering",
     description:
       "A searchable map of places you and the people you trust actually recommend.",
-    images: ["/og.png"]
+    images: ["/brand/astir-wordmark.png"]
   },
   icons: {
     icon: "/icon.png",

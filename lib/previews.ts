@@ -1,7 +1,7 @@
 import { readShareCard, validShareCardToken } from "./share-card-contract";
 import { cache } from "react";
 import type { Metadata } from "next";
-import { publicProfileShareTitle, websiteURL, type SharedRouteKind } from "@/lib/site";
+import { publicProfileShareTitle, websiteURL, SITE_URL, type SharedRouteKind } from "@/lib/site";
 
 export type PublicPreview = {
   kind: "profile" | "place" | "list" | "invite" | "activity";
@@ -103,11 +103,11 @@ export function publicPreviewMetadata({
   const description = preview?.description || fallbackDescription;
   const canonicalURL = websiteURL(kind, identifier);
   const url = preview?.card_token
-    ? canonicalURL.replace("https://getrec.me/", "https://getrec.me/cards/") + `?card=${preview.card_token}`
+    ? canonicalURL.replace(`${SITE_URL}/`, `${SITE_URL}/cards/`) + `?card=${preview.card_token}`
     : canonicalURL;
   const images = preview?.card_image_url
     ? [{ url: preview.card_image_url, width: 1170, height: 978, alt: title }]
-    : ["/og.png"];
+    : ["/brand/astir-wordmark.png"];
 
   return {
     title: { absolute: title },

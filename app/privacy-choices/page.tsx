@@ -3,8 +3,9 @@ import { DocumentPage } from "@/components/DocumentPage";
 import { SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata = {
+  alternates: { canonical: "/privacy-choices" },
   title: "Privacy Choices",
-  description: "Manage rec.me privacy, permissions, and data requests."
+  description: "Manage Astir privacy, permissions, and data requests."
 };
 
 export default function PrivacyChoicesPage() {
@@ -12,7 +13,7 @@ export default function PrivacyChoicesPage() {
     <DocumentPage
       eyebrow="Privacy choices"
       title="You should be able to change your mind."
-      intro="Most privacy controls live directly in rec.me. This page explains where to find them and how to make a data request."
+      intro="Most privacy controls live directly in Astir. This page explains where to find them and how to make a data request."
     >
       <section>
         <h2>Control what people can see</h2>
@@ -35,7 +36,7 @@ export default function PrivacyChoicesPage() {
         <h2>Permissions and notifications</h2>
         <p>
           Change location, photo, camera, contact, and notification permission
-          in iOS Settings. Manage rec.me notification categories under Profile
+          in iOS Settings. Manage Astir notification categories under Profile
           → Settings → Notifications.
         </p>
       </section>
@@ -44,7 +45,7 @@ export default function PrivacyChoicesPage() {
         <h2>Delete your account</h2>
         <p>
           Open Profile → Settings → Delete my account. After two confirmations,
-          rec.me requests permanent deletion of the account, owned records,
+          Astir requests permanent deletion of the account, owned records,
           stored media, and notification registrations. If deletion fails, the
           app tells you that nothing was removed so you can retry safely.
         </p>
@@ -55,7 +56,7 @@ export default function PrivacyChoicesPage() {
         <p>
           Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> from the
           address connected to your account. Include the type of request and
-          your rec.me username. Do not include passwords, authentication codes,
+          your Astir username. Do not include passwords, authentication codes,
           private notes, or precise location in the message.
         </p>
         <p>
