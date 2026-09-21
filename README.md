@@ -24,3 +24,22 @@ Production environment and redeploy. The only accepted App Store value is
 
 See [`docs/launch-dns-and-site.md`](docs/launch-dns-and-site.md) for the verified
 DNS baseline, Clerk production handoff, support-email setup, and launch checks.
+
+## Published-card Universal Links (REC-577)
+
+The five `/cards/{profiles,places,lists,activities,invites}/*` paths associate
+with Astir. Compatible installed apps unwrap the card URL to the exact native
+entity. Browser recipients and link-preview crawlers retain the published image,
+metadata, download fallback, and View action.
+
+Release gate: distribute the iOS card-route parser before deploying these
+association rules, verify tester updates, then test taps from Messages on a
+physical device. Older app builds cannot parse `/cards/...`; AASA selects an
+app identifier, not a version. Keep this website change unmerged until that
+gate is satisfied. Apple's association cache may delay device uptake.
+
+Keep both association files identical and preserve these routes during the
+REC-586 domain migration, including existing getrec.me links. Verification:
+`node --experimental-strip-types --test lib/*contract.test.mjs`, a production
+build, then `node --test lib/share-page-http.test.mjs` exercise the route rules,
+served JSON, and unchanged browser previews.
