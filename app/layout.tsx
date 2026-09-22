@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     images: ["/brand/astir-wordmark.png"]
   },
   icons: {
-    icon: "/icon.png",
-    apple: "/icon.png"
+    icon: { url: "/icon.png", type: "image/png", sizes: "1024x1024" },
+    apple: { url: "/icon.png", sizes: "1024x1024" }
   }
 };
 
