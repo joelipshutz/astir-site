@@ -1,0 +1,61 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "Y7TVK75RZ8.com.grayline.wander"
+        ],
+        "components": [
+          {
+            "/": "/profiles/*",
+            "comment": "Opens a shared Astir profile."
+          },
+          {
+            "/": "/places/*",
+            "comment": "Opens a shared Astir place."
+          },
+          {
+            "/": "/lists/*",
+            "comment": "Opens a Astir place list."
+          },
+          {
+            "/": "/invites/*",
+            "comment": "Opens a revocable Astir list invitation."
+          },
+          {
+            "/": "/plans/*",
+            "comment": "Opens a read-only Astir place invitation."
+          },
+          {
+            "/": "/share/tiktok",
+            "comment": "Returns TikTok Share Kit results to Astir."
+          },
+          {
+            "/": "/activities/*",
+            "comment": "Opens the exact shared Astir Check-in or Wanna Go."
+          },
+          {
+            "/": "/cards/profiles/*",
+            "comment": "Opens the exact item from a published Astir card in compatible app builds."
+          },
+          {
+            "/": "/cards/places/*",
+            "comment": "Opens the exact item from a published Astir card in compatible app builds."
+          },
+          {
+            "/": "/cards/activities/*",
+            "comment": "Opens the exact item from a published Astir card in compatible app builds."
+          },
+          {
+            "/": "/cards/lists/*",
+            "comment": "Opens the exact item from a published Astir card in compatible app builds."
+          },
+          {
+            "/": "/cards/invites/*",
+            "comment": "Opens the exact item from a published Astir card in compatible app builds."
+          }
+        ]
+      }
+    ]
+  }
+}

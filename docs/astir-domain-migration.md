@@ -40,8 +40,25 @@ See `DESIGN.md` for the website's psychedelic print and editorial UI treatment.
 
 The existing `recme://` native scheme, backend RPCs, environment variable names,
 support mailbox, app store ID, bundle/team IDs and authentication settings stay
-stable. Adding the new domain to iOS Associated Domains requires a separate app
-release; the web fallback continues to offer the existing native scheme.
+stable. REC-599 adds both Astir domains to iOS Associated Domains and changes
+newly generated app/share links to their matching Astir paths. It requires an
+app update; the web fallback continues to offer the existing native scheme.
+
+## Shared links on Astir (REC-599)
+
+Both Apple association endpoints are internally rewritten on the exact Astir
+hosts to `public/.well-known/astir-apple-app-site-association.json`. This adds
+the five supported `/cards/<entity>/*` paths for new clients. The same endpoints
+on legacy hosts keep their existing rules and REC-577's rollout gate. Older
+apps have no Astir associated-domain entitlement, so the new rules cannot
+capture their unsupported card URLs. This host split must remain until the
+legacy rollout is explicitly approved.
+
+Generated web metadata and links already use Astir's origin. Existing card
+tokens, opaque IDs, plan URLs, query strings, and native actions are preserved.
+Previously sent URLs and uploaded bitmap artwork cannot be rewritten; legacy
+links remain available. Verify new-domain links from Messages on the updated
+app and the web fallback without it after distribution.
 
 ## Validation and rollback
 

@@ -14,3 +14,13 @@ export function marketingRedirects(enabled: boolean) {
     permanent: true
   }));
 }
+
+// Only new app builds associate with the Astir hosts and understand card URLs.
+// Keep the legacy hosts' association unchanged until REC-577's rollout gate.
+export function astirAssociationRewrites() {
+  return ["/.well-known/apple-app-site-association", "/apple-app-site-association"].map(source => ({
+    source,
+    has: [{ type: "host" as const, value: "^(?:www\\.)?astirmovement\\.com$" }],
+    destination: "/.well-known/astir-apple-app-site-association.json"
+  }));
+}
