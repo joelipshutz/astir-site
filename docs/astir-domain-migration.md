@@ -60,9 +60,10 @@ Previously sent URLs and uploaded bitmap artwork cannot be rewritten; legacy
 links remain available. Verify new-domain links from Messages on the updated
 app and the web fallback without it after distribution.
 
-TikTok verifies the canonical origin using its public signature file at
-`/tiktokMHKXAKV8YdMLPoUXQVoKU9mqDiNtglua.txt`. Keep this file available
-for ownership verification of the existing developer app.
+TikTok verifies the canonical origin separately for the sandbox and production
+configurations. Keep both public ownership signature files available:
+`/tiktokMHKXAKV8YdMLPoUXQVoKU9mqDiNtglua.txt` (sandbox) and
+`/tiktokq2FLXeOfzj5mJcxQJtiQit7ygOOIWrNj.txt` (production).
 
 ## Validation and rollback
 
