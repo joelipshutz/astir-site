@@ -1,4 +1,5 @@
 export const SITE_URL = "https://astirmovement.com";
+export const COMPANY_NAME = "Hotchkiss Technologies LLC";
 export const APP_STORE_URL = "https://apps.apple.com/app/id6776850787";
 export const TESTFLIGHT_URL = "https://testflight.apple.com/join/knEhRa6t";
 export const SUPPORT_EMAIL = "getrec.me@gmail.com";

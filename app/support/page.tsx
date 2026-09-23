@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { DocumentPage } from "@/components/DocumentPage";
-import { SUPPORT_EMAIL } from "@/lib/site";
+import { COMPANY_NAME, SITE_URL, SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata = {
   alternates: { canonical: "/support" },
   title: "Support",
-  description: "Get help with your Astir account, places, imports, and safety."
+  description: `Contact ${COMPANY_NAME}, the company behind Astir, for help with your account, places, imports, and safety.`
 };
 
 export default function SupportPage() {
@@ -14,6 +14,7 @@ export default function SupportPage() {
       eyebrow="Support"
       title="Tell us what happened, not just that it broke."
       intro="The fastest support request includes your device, app build, approximate time, and the exact step where things went wrong."
+      updated="September 23, 2026"
     >
       <section className="support-callout">
         <h2>Contact Astir support</h2>
@@ -26,6 +27,23 @@ export default function SupportPage() {
         >
           Start a support email
         </a>
+      </section>
+
+      <section id="company">
+        <h2>The company behind Astir</h2>
+        <p>
+          Astir is developed and operated by {COMPANY_NAME}. We build software
+          that helps people remember places worth returning to and discover
+          places through people they trust.
+        </p>
+        <p>
+          <a href={SITE_URL}>astirmovement.com</a> is the official website for
+          Astir, a product of {COMPANY_NAME}. Astir was previously known as rec.me.
+        </p>
+        <p>
+          For company, product, or support inquiries, contact {COMPANY_NAME} at{" "}
+          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        </p>
       </section>
 
       <section>

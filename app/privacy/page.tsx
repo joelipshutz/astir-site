@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { DocumentPage } from "@/components/DocumentPage";
-import { SUPPORT_EMAIL } from "@/lib/site";
+import { COMPANY_NAME, SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata = {
   alternates: { canonical: "/privacy" },
@@ -14,7 +14,18 @@ export default function PrivacyPage() {
       eyebrow="Privacy"
       title="Your map is personal. Our privacy rules should be plain."
       intro="Astir (formerly rec.me). This policy explains what Astir collects, why we need it, which services help us operate, and the choices you have."
+      updated="September 23, 2026"
     >
+      <section>
+        <h2>Who we are</h2>
+        <p>
+          {COMPANY_NAME} develops and operates Astir and its official website,
+          astirmovement.com. In this policy, “we,” “us,” and “our” refer to
+          {" "}{COMPANY_NAME}. For company information and contact details, visit
+          {" "}our <Link href="/support#company">Support page</Link>.
+        </p>
+      </section>
+
       <section>
         <h2>At a glance</h2>
         <ul>

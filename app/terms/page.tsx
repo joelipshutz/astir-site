@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { DocumentPage } from "@/components/DocumentPage";
-import { SUPPORT_EMAIL } from "@/lib/site";
+import { COMPANY_NAME, SUPPORT_EMAIL } from "@/lib/site";
 
 export const metadata = {
   alternates: { canonical: "/terms" },
@@ -14,7 +14,18 @@ export default function TermsPage() {
       eyebrow="Terms"
       title="Use Astir like a good guest."
       intro="These Terms govern access to the Astir (formerly rec.me) app, website, and related services. By creating an account or using Astir, you agree to them."
+      updated="September 23, 2026"
     >
+      <section>
+        <h2>About the service</h2>
+        <p>
+          Astir and its official website, astirmovement.com, are developed and
+          operated by {COMPANY_NAME}. These Terms are between you and
+          {" "}{COMPANY_NAME}. In these Terms, “we,” “us,” and “our” refer to
+          {" "}{COMPANY_NAME}.
+        </p>
+      </section>
+
       <section>
         <h2>Who may use Astir</h2>
         <p>
