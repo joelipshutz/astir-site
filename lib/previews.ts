@@ -106,7 +106,9 @@ export function publicPreviewMetadata({
     ? canonicalURL.replace(`${SITE_URL}/`, `${SITE_URL}/cards/`) + `?card=${preview.card_token}`
     : canonicalURL;
   const images = preview?.card_image_url
-    ? [{ url: preview.card_image_url, width: 1170, height: 978, alt: title }]
+    // Published images can predate the image-only Messages preview. Let crawlers
+    // inspect their actual size instead of imposing the old baked-in footer ratio.
+    ? [{ url: preview.card_image_url, alt: title }]
     : ["/brand/astir-wordmark.png"];
 
   return {
