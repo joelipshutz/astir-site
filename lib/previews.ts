@@ -1,5 +1,6 @@
 import { readShareCard, validShareCardToken } from "./share-card-contract";
 import { cache } from "react";
+import { appClipBanner } from "./app-clip";
 import type { Metadata } from "next";
 import { publicProfileShareTitle, websiteURL, SITE_URL, type SharedRouteKind } from "@/lib/site";
 
@@ -106,13 +107,17 @@ export function publicPreviewMetadata({
     ? canonicalURL.replace(`${SITE_URL}/`, `${SITE_URL}/cards/`) + `?card=${preview.card_token}`
     : canonicalURL;
   const images = preview?.card_image_url
-    ? [{ url: preview.card_image_url, width: 1170, height: 978, alt: title }]
+    // Published images can predate the image-only Messages preview. Let crawlers
+    // inspect their actual size instead of imposing the old baked-in footer ratio.
+    ? [{ url: preview.card_image_url, alt: title }]
     : ["/brand/astir-wordmark.png"];
+  const clipBanner = appClipBanner(url, preview?.is_available === true, process.env.ASTIR_APP_CLIP_ENABLED);
 
   return {
     title: { absolute: title },
     description,
     referrer: "no-referrer",
+    other: clipBanner ? { "apple-itunes-app": clipBanner } : undefined,
     alternates: { canonical: url },
     openGraph: {
       title,
