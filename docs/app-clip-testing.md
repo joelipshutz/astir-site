@@ -10,6 +10,11 @@ Available share routes then emit the `apple-itunes-app` tag with the full app ID
 Clip bundle ID and exact invocation URL, including a published-card token.
 Unavailable links never advertise the Clip. Map shares use the profile route.
 
+The published App Store app is now the default download fallback. Set
+`NEXT_PUBLIC_RECME_RELEASE_CHANNEL=testflight` explicitly when testing the beta
+fallback; changing this public variable requires a fresh build. The published
+parent build does not itself enable the separately released App Clip.
+
 Run the production build, lint, typecheck and `node --test lib/*.test.mjs`.
 The HTTP tests start loopback-only servers with synthetic RPC responses and test
 discovery both off and on, every share route, all served association variants,

@@ -5,6 +5,9 @@ export function validShareCardToken(value: unknown): value is string {
 export function readShareCard(value: unknown, endpoint: string): { title: string; imageURL: string } | null {
   if (!value || typeof value !== "object") return null;
   const card = value as Record<string, unknown>;
+  if (card.preview_mode === "generic") {
+    return { title: "Shared on Astir", imageURL: "https://astirmovement.com/brand/astir-wordmark.png" };
+  }
   if (typeof card.title !== "string" || !card.title.trim() || card.title.length > 500 ||
       typeof card.image_path !== "string" ||
       !/^[A-Za-z0-9_-]+\/[a-f0-9-]{36}\/preview\.png$/.test(card.image_path)) return null;
