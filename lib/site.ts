@@ -5,9 +5,9 @@ export const TESTFLIGHT_URL = "https://testflight.apple.com/join/knEhRa6t";
 export const SUPPORT_EMAIL = "getrec.me@gmail.com";
 
 export const releaseChannel =
-  process.env.NEXT_PUBLIC_RECME_RELEASE_CHANNEL === "app-store"
-    ? "app-store"
-    : "testflight";
+  process.env.NEXT_PUBLIC_RECME_RELEASE_CHANNEL === "testflight"
+    ? "testflight"
+    : "app-store";
 
 export const primaryDownloadURL =
   releaseChannel === "app-store" ? APP_STORE_URL : TESTFLIGHT_URL;
