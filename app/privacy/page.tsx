@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       eyebrow="Privacy"
       title="Your map is personal. Our privacy rules should be plain."
       intro="Astir (formerly rec.me). This policy explains what Astir collects, why we need it, which services help us operate, and the choices you have."
-      updated="September 23, 2026"
+      updated="October 2, 2026"
     >
       <section>
         <h2>Who we are</h2>
@@ -31,12 +31,13 @@ export default function PrivacyPage() {
         <ul>
           <li>Astir does not sell personal information.</li>
           <li>Astir does not broadcast or sell live location.</li>
-          <li>Stealth saves are visible only to you.</li>
+          <li>Stealth saves are hidden from other members.</li>
           <li>
             Non-stealth saves are shared inside Astir according to the
             visibility shown in the app; they are not a public internet feed.
           </li>
           <li>You can delete your account from Settings.</li>
+          <li>The full app uses account-linked session recordings to understand and improve its features.</li>
         </ul>
       </section>
 
@@ -45,7 +46,7 @@ export default function PrivacyPage() {
         <h3>Account and profile information</h3>
         <p>
           We process account identifiers and the information you provide, such
-          as your email address, optional phone number, username, display name,
+          as your email address, phone number, username, display name,
           profile photo, bio, and home area. Authentication is provided by
           Clerk.
         </p>
@@ -74,6 +75,40 @@ export default function PrivacyPage() {
           interactions needed to operate and improve the service. Product
           analytics are disabled when Astir is not configured with an
           analytics provider.
+        </p>
+        <h3>Feedback you submit</h3>
+        <p>
+          Feedback may include your message, screenshots or photos, and an
+          optional voice recording you choose to send. We use these materials
+          to investigate your report and improve the service.
+        </p>
+      </section>
+
+      <section>
+        <h2>Product analytics and session recordings</h2>
+        <p>
+          We use PostHog for product analytics and session recordings in the
+          full app. Recordings capture visible app screens and interactions
+          and are linked to your account ID, name, and username. They can
+          include profile and contact details, photos, notes, lists, social
+          relationships, searches, and map information shown on screen. If a
+          map shows your current location, the recording can include that
+          location at the precision displayed.
+        </p>
+        <p>
+          Passwords, sign-in verification codes, and system-owned screens are
+          masked. Session recordings do not include microphone audio, console
+          logs, or network request contents. Optional voice feedback is a
+          separate submission described above. The Astir App Clip does not
+          record sessions.
+        </p>
+        <p>
+          Visibility settings control sharing with other members; they do not
+          exclude visible private content from this processing by Astir and
+          its service providers. Recordings are not anonymous. We use them to
+          understand feature usage and investigate problems, not for targeted
+          advertising or data-broker sharing. For a request concerning your
+          recordings, visit <Link href="/privacy-choices">Privacy Choices</Link>.
         </p>
       </section>
 
@@ -108,7 +143,7 @@ export default function PrivacyPage() {
           <li>Resolve imports, search for places, and show requested media.</li>
           <li>Send notifications you enable.</li>
           <li>Prevent abuse, investigate failures, and maintain the service.</li>
-          <li>Measure and improve Astir using privacy-limited diagnostics.</li>
+          <li>Measure and improve Astir using product analytics, session recordings, and diagnostics.</li>
           <li>Comply with law and enforce our Terms and Community Standards.</li>
         </ul>
       </section>
@@ -121,7 +156,7 @@ export default function PrivacyPage() {
           Supabase for database, storage, and server functions, Apple services
           for app distribution, maps, notifications, and diagnostics, Google
           Places for requested venue media, Vercel for this website, and
-          PostHog if privacy-limited product analytics are enabled. An
+          PostHog for product analytics and account-linked session recordings. An
           extraction provider may process content you explicitly submit for an
           import.
         </p>
@@ -138,7 +173,7 @@ export default function PrivacyPage() {
         <p>
           Astir is not a public-location feed. Inside the app, your content is
           shown according to the visibility displayed when you save or share
-          it. Stealth content stays private. A public link can reveal the
+          it. Stealth content is hidden from other members. A public link can reveal the
           limited preview shown on that web page; private notes and live
           location are never included. List invitations use hard-to-guess
           tokens and can expire or be revoked.

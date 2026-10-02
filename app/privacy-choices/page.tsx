@@ -42,6 +42,18 @@ export default function PrivacyChoicesPage() {
       </section>
 
       <section>
+        <h2>Session recordings and analytics</h2>
+        <p>
+          The full app uses account-linked session recordings as described in
+          the <Link href="/privacy">Privacy Policy</Link>. Private Profile and
+          Stealth control sharing with other members; they do not turn off
+          recordings. To make a request concerning your recordings or analytics
+          data, follow the request instructions below. Do not send passwords or
+          sign-in codes.
+        </p>
+      </section>
+
+      <section>
         <h2>Delete your account</h2>
         <p>
           Open Profile → Settings → Delete my account. After two confirmations,
