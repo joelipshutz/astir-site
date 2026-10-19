@@ -18,7 +18,7 @@ async function resolve({ params, searchParams }: Props) {
 }
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { kind, id, preview } = await resolve(props);
-  return publicPreviewMetadata({ kind, identifier: id, preview, fallbackTitle: "Shared card", fallbackDescription: "Open this shared place in ASTIR.", alwaysNoIndex: true });
+  return publicPreviewMetadata({ kind, identifier: id, preview, fallbackTitle: "Shared card", fallbackDescription: `Open this shared ${kind === "invite" ? "invitation" : kind} in ASTIR.`, alwaysNoIndex: true });
 }
 export default async function CardPage(props: Props) {
   const { kind, id, preview } = await resolve(props);
