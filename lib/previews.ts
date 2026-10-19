@@ -19,6 +19,23 @@ export type PublicPreview = {
 
 const allowedKinds = new Set(["profile", "place", "list", "invite", "activity"]);
 
+// Match the native category labels; only the category segment is formatted.
+const placeCategoryLabels: Record<string, string> = {
+  restaurants_food: "Restaurants & Food", coffee_tea_sweets: "Coffee, Tea, & Sweets",
+  bars_nightlife: "Bars & Nightlife", outdoors_nature: "Outdoors & Nature",
+  things_to_do: "Things To Do", shopping: "Shopping", wellness_fitness: "Wellness & Fitness",
+  stays: "Stays", services_errands: "Services & Errands", travel_transit: "Travel & Transit",
+  work_education: "Work & Education", civic_faith: "Civic & Faith",
+  areas_addresses: "Areas & Addresses", facilities_other: "Facilities & Other", place: "Place"
+};
+
+function placeSubtitle(value: string | undefined): string | undefined {
+  if (!value) return value;
+  const [category, ...locality] = value.split(" · ");
+  const label = placeCategoryLabels[category] ?? category.replaceAll("_", " ");
+  return [label, ...locality].join(" · ");
+}
+
 export const fetchPublicPreview = cache(async function fetchPublicPreview(
   kind: PublicPreview["kind"],
   identifier: string,
@@ -50,10 +67,11 @@ export const fetchPublicPreview = cache(async function fetchPublicPreview(
       if (!response.ok) return null;
       const card = readShareCard(await response.json(), endpoint);
       if (!card) return null;
+      const subtitle = card.publicContext && kind === "place" ? placeSubtitle(card.subtitle) : card.subtitle;
       return { kind,
         title: card.publicContext && kind === "profile" ? publicProfileShareTitle(card.title)
-          : card.publicContext && card.subtitle ? `${card.title} · ${card.subtitle}` : card.title,
-        description: card.description ?? card.subtitle,
+          : card.publicContext && subtitle ? `${card.title} · ${subtitle}` : card.title,
+        description: card.description ?? subtitle,
         card_image_url: card.imageURL, card_token: cardToken, is_available: true };
     } catch { return null; }
   }
@@ -84,7 +102,7 @@ export const fetchPublicPreview = cache(async function fetchPublicPreview(
     if (!payload?.is_available) return null;
     return kind === "profile"
       ? { ...payload, title: publicProfileShareTitle(payload.title), subtitle: undefined }
-      : payload;
+      : kind === "place" ? { ...payload, subtitle: placeSubtitle(payload.subtitle) } : payload;
   } catch {
     return null;
   }
