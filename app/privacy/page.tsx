@@ -173,10 +173,14 @@ export default function PrivacyPage() {
         <p>
           Astir is not a public-location feed. Inside the app, your content is
           shown according to the visibility displayed when you save or share
-          it. Stealth content is hidden from other members. A public link can reveal the
-          limited preview shown on that web page; private notes and live
-          location are never included. List invitations use hard-to-guess
-          tokens and can expire or be revoked.
+          it. Stealth content is hidden from other members. When you explicitly share
+          your own item outside Astir, the preview shown in the share screen
+          can become a public copy accessible to anyone with the link. That
+          copy may include its image, title and selected context; it does not
+          unlock the original item or expose live location. Recipients and
+          third-party services may retain copies after you edit, hide or delete
+          the original. List invitations use hard-to-guess tokens and can expire
+          or be revoked.
         </p>
       </section>
 

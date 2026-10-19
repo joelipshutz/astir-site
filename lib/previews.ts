@@ -1,4 +1,4 @@
-import { readShareCard, validShareCardToken } from "./share-card-contract";
+import { publicImageURL, readShareCard, validShareCardToken } from "./share-card-contract";
 import { cache } from "react";
 import { appClipBanner } from "./app-clip";
 import type { Metadata } from "next";
@@ -41,7 +41,7 @@ export const fetchPublicPreview = cache(async function fetchPublicPreview(
   if (cardToken !== undefined) {
     if (!validShareCardToken(cardToken)) return null;
     try {
-      const response = await fetch(`${endpoint}/rest/v1/rpc/share_card_preview`, {
+      const response = await fetch(`${endpoint}/rest/v1/rpc/share_card_context`, {
         method: "POST",
         headers: { apikey: publishableKey, Authorization: `Bearer ${publishableKey}`, "Content-Type": "application/json" },
         body: JSON.stringify({ input_token: cardToken, input_kind: kind, input_identifier: identifier }),
@@ -49,7 +49,12 @@ export const fetchPublicPreview = cache(async function fetchPublicPreview(
       });
       if (!response.ok) return null;
       const card = readShareCard(await response.json(), endpoint);
-      return card ? { kind, title: card.title, card_image_url: card.imageURL, card_token: cardToken, is_available: true } : null;
+      if (!card) return null;
+      return { kind,
+        title: card.publicContext && kind === "profile" ? publicProfileShareTitle(card.title)
+          : card.publicContext && card.subtitle ? `${card.title} · ${card.subtitle}` : card.title,
+        description: card.description ?? card.subtitle,
+        card_image_url: card.imageURL, card_token: cardToken, is_available: true };
     } catch { return null; }
   }
 
@@ -101,16 +106,16 @@ export function publicPreviewMetadata({
   alwaysNoIndex?: boolean;
 }): Metadata {
   const title = preview?.title || fallbackTitle;
-  const description = preview?.description || fallbackDescription;
+  const description = preview?.description || preview?.subtitle || fallbackDescription;
   const canonicalURL = websiteURL(kind, identifier);
   const url = preview?.card_token
     ? canonicalURL.replace(`${SITE_URL}/`, `${SITE_URL}/cards/`) + `?card=${preview.card_token}`
     : canonicalURL;
-  const images = preview?.card_image_url
-    // Published images can predate the image-only Messages preview. Let crawlers
-    // inspect their actual size instead of imposing the old baked-in footer ratio.
-    ? [{ url: preview.card_image_url, alt: title }]
-    : ["/brand/astir-wordmark.png"];
+  const previewImage = preview?.card_image_url || publicImageURL(preview?.image_url);
+  const imageURL = previewImage || (preview?.is_available
+    ? `${SITE_URL}/share-preview/${kind}/${encodeURIComponent(identifier)}${preview.card_token ? `?card=${preview.card_token}` : ""}`
+    : `${SITE_URL}/brand/astir-wordmark.png`);
+  const images = [{ url: imageURL, alt: title }];
   const clipBanner = appClipBanner(url, preview?.is_available === true, process.env.ASTIR_APP_CLIP_ENABLED);
 
   return {

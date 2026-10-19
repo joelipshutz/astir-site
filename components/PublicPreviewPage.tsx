@@ -64,11 +64,17 @@ export function PublicPreviewPage({
     <main className="share-shell">
       <section className="share-preview share-preview--card">
         <a href={openURL} aria-label={title}>
-          {/* The approved SwiftUI card itself is the link, including its action. */}
+          {/* Artwork is image-only; context and action are accessible below it. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={preview.card_image_url} alt={title} width={1170} height={978}
             className="share-card-image" referrerPolicy="no-referrer" />
         </a>
+        <div className="share-preview__content">
+          <p className="eyebrow">{eyebrow}</p>
+          <h1>{title}</h1>
+          <p>{description}</p>
+          <a className="button" href={openURL}>{kind === "invite" ? "Join" : "View in ASTIR"}</a>
+        </div>
         <div className="share-preview__actions">
           <a className="button button--secondary" href={primaryDownloadURL}>{primaryDownloadLabel}</a>
         </div>
@@ -121,8 +127,8 @@ export function PublicPreviewPage({
             </a>
           </div>
           <p className="share-preview__privacy">
-            Astir never publishes private notes or live location. If this
-            content is unavailable, it may be private, expired, or revoked.
+            Shared previews may be deliberate copies published by their owner.
+            Access to the original still follows its privacy settings.
           </p>
           <Link className="text-link" href="/">
             Learn about Astir
